@@ -1,6 +1,6 @@
-import { FormData } from "./../shared/interface/form-data";
-import { Component, OnInit, Input } from "@angular/core";
-import { FormGroup, FormControl } from "@angular/forms";
+import { FormData } from './../shared/modelInterface/form-data';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
@@ -9,23 +9,29 @@ import { FormGroup, FormControl } from "@angular/forms";
 })
 export class HomeComponent implements OnInit {
   @Input() formData: FormData[];
-  form: FormGroup;
+  dynamicForm: FormGroup;
   submitted: boolean;
+  formVal=[];
+  selected = new FormControl(0);
 
   constructor() {}
 
   ngOnInit() {
     const formGroup = {};
-
     this.formData.forEach(formControl => {
-      formGroup[formControl.controlName] = new FormControl("");
+      this.formVal=formControl.Controls;
+      this.formVal.forEach(data =>{
+        formGroup[data.Field] = new FormControl( '' ) ;
+      })
     });
-
-    this.form = new FormGroup(formGroup);
+    this.dynamicForm = new FormGroup(formGroup);
   }
 
   submitForm() {
-    this.submitted = true;
+    console.log("Submitted Data : ",this.dynamicForm.value);
+  }
+  toggleTab(){
+    this.selected = new FormControl(1);
   }
 
 }

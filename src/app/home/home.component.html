@@ -2,74 +2,74 @@
   <mat-card-header>
     Dynamic form using JSON
   </mat-card-header>
-  <mat-card-content>
-    <form [formGroup]="form" (submit)="submitForm()">
-        <ng-template ngFor let-input [ngForOf]="formData">
-          <ng-container [ngSwitch]="input.controlType">
-            <ng-template [ngSwitchCase]="'text'">
-              <div class="form-group">
-                <label [for]="input.controlName"> {{input.controlName}}</label>
-                <input
-                  [formControlName]="input.controlName"
-                  [type]="input.valueType"
-                  [name]="input.controlName"
-                  [required]="input.validators.required"
-                  [minlength]="input.validators.minlength"
-                  [maxlength]="input.validators.maxlength"
-                />
-                <div
-                  class="error"
-                  *ngIf="form.get(input.controlName).invalid && (form.get(input.controlName).dirty || form.get(input.controlName).touched)"
-                >
-                  <div *ngIf="form.get(input.controlName).errors.required">
-                    Input required
+  <form [formGroup]="dynamicForm" (submit)="submitForm()">
+    <mat-card-content>
+      <mat-tab-group [selectedIndex]="selected.value" (selectedIndexChange)="selected.setValue($event)">
+        <ng-container *ngFor="let tab of formData">
+          <mat-tab label="{{tab.stepName}}">
+
+            <ng-container *ngFor="let input of tab.Controls">
+              <div [ngSwitch]="input.Type">
+
+                <ng-template [ngSwitchCase]="'text'">
+                  <mat-form-field class="halfWidth">
+                    <mat-label> {{input.Field}}</mat-label>
+                    <input matInput [formControlName]="input.Field" [required]="input.Required"
+                      [minlength]="input.Length" />
+                    <div class="error"
+                      *ngIf="dynamicForm.get(input.Field).invalid && (dynamicForm.get(input.Field).dirty || dynamicForm.get(input.Field).touched)">
+                      <div *ngIf="dynamicForm.get(input.Field).errors.required">
+                        {{input.Field}} required
+                      </div>
+                      <div *ngIf="dynamicForm.get(input.Field).errors.minlength">
+                        Minimum length is {{input.Length}}
+                      </div>
+                    </div>
+                  </mat-form-field>
+                </ng-template>
+
+
+                <ng-template [ngSwitchCase]="'textarea'">
+                  <mat-form-field class="halfWidth">
+                    <mat-label> {{input.Field}}</mat-label>
+                    <textarea matInput [formControlName]="input.Field" [required]="input.Required"
+                      [minlength]="input.Length"></textarea>
+                    <div class="error"
+                      *ngIf="dynamicForm.get(input.Field).invalid && (dynamicForm.get(input.Field).dirty || dynamicForm.get(input.Field).touched)">
+                      <div *ngIf="dynamicForm.get(input.Field).errors.required">
+                        {{input.Field}} required
+                      </div>
+                      <div *ngIf="dynamicForm.get(input.Field).errors.minlength">
+                        Minimum length is {{input.Length}}
+                      </div>
+                    </div>
+                  </mat-form-field>
+                </ng-template>
+
+
+                <ng-template [ngSwitchCase]="'checkbox'">
+                  <div class="padIt">
+                    <mat-label> {{input.Field}}</mat-label><br><br>
+                    <ng-container *ngFor="let choices of input.Options">
+                      <div class="arrange">
+                        <mat-checkbox [formControlName]="input.Field" [required]="input.Required"></mat-checkbox>
+                        <mat-label class="checkCss"> {{choices}} </mat-label><br>
+                      </div>
+                    </ng-container>
                   </div>
-                  <div *ngIf="form.get(input.controlName).errors.minlength">
-                    Minimum length is {{input.validators.minlength}}
-                  </div>
-                </div>
+                </ng-template>
+
+
               </div>
-            </ng-template>
-      
-            <ng-template [ngSwitchCase]="'select'">
-              <div class="form-group">
-                <label [for]="input.controlName"> {{input.controlName}}</label>
-                <select
-                  [formControlName]="input.controlName"
-                  [name]="input.controlName"
-                  [id]="input.controlName"
-                  [required]="input.validators.required"
-                >
-                  <option value="">{{input.placeholder}}</option>
-                  <option *ngFor="let option of input.options" [value]="option.value"
-                    >{{option.optionName}}</option
-                  >
-                </select>
-              </div>
-            </ng-template>
-      
-            <ng-template [ngSwitchCase]="'radio'">
-              <div *ngFor="let option of input.options" class="form-group row">
-                <input
-                  [formControlName]="input.controlName"
-                  [type]="input.controlType"
-                  [name]="input.controlName"
-                  [value]="option.value"
-                  [required]="input.validators.required"
-                />
-                <label [for]="input.controlName"> {{option.optionName}}</label>
-              </div>
-            </ng-template>
-          </ng-container>
-        </ng-template>
-      
-        <button type="submit" [disabled]="form.invalid">Submit</button>
-        <div *ngIf="submitted"><pre>{{form.value | json}}</pre></div>
-      </form>
-      
-    <!-- <mat-tab-group>
-      <mat-tab label="First"> Content 1 </mat-tab>
-      <mat-tab label="Second"> Content 2 </mat-tab>
-    </mat-tab-group> -->
-  </mat-card-content>
+            </ng-container>
+          </mat-tab>
+        </ng-container>
+      </mat-tab-group>
+    </mat-card-content>
+    <mat-card-actions align="center">
+      <button mat-raised-button color="primary" *ngIf="selected.value" [disabled]="!dynamicForm.valid"
+        type="submit">Submit</button>
+      <button mat-raised-button color="accent" *ngIf="!selected.value" (click)="toggleTab()">Next</button>
+    </mat-card-actions>
+  </form>
 </mat-card>

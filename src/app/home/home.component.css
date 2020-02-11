@@ -1,6 +1,7 @@
 .parent-card {
-  width: 97%;
-  height: 91.2%;
+  min-width: 97%;
+  min-height: 91.2%;
+  height:90%;
   margin:10px 1.5%;
   -webkit-box-shadow: inset -9px -1px 62px -38px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: inset -9px -1px 62px -38px rgba(0, 0, 0, 0.75);
@@ -10,4 +11,17 @@
 .example-header-image {
   background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
   background-size: cover;
+}
+.halfWidth{
+  width:100%;
+  
+}
+mat-card-content{
+  padding:15px;
+}
+.checkCss,.padIt,form{
+  padding:15px;
+}
+.arrange{
+  margin-left:8rem;
 }
