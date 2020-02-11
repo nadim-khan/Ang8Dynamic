@@ -1,0 +1,13 @@
+.parent-card {
+  width: 97%;
+  height: 91.2%;
+  margin:10px 1.5%;
+  -webkit-box-shadow: inset -9px -1px 62px -38px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset -9px -1px 62px -38px rgba(0, 0, 0, 0.75);
+  box-shadow: inset -9px -1px 62px -38px rgba(0, 0, 0, 0.75);
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
