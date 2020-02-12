@@ -69,7 +69,10 @@
     <mat-card-actions align="center">
       <button mat-raised-button color="primary" *ngIf="selected.value" [disabled]="!dynamicForm.valid"
         type="submit">Submit</button>
+        
       <button mat-raised-button color="accent" *ngIf="!selected.value" (click)="toggleTab()">Next</button>
     </mat-card-actions>
   </form>
+  <pre *ngIf="submitted">{{dynamicForm.value|json}}</pre>
 </mat-card>
+
