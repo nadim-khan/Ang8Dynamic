@@ -10,7 +10,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 export class HomeComponent implements OnInit {
   @Input() formData: FormData[];
   dynamicForm: FormGroup;
-  submitted: boolean;
+  submitted= false;
   formVal=[];
   selected = new FormControl(0);
 
@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
   }
 
   submitForm() {
+    this.submitted = true;
     console.log("Submitted Data : ",this.dynamicForm.value);
   }
   toggleTab(){
