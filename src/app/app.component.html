@@ -5,12 +5,15 @@
   </div>
 </mat-toolbar>
 <mat-sidenav-container color="primary" >
-  <mat-sidenav opened='false'  mode="side" #sidenav class="sidenav-fab-container" fullscreen >
+  <mat-sidenav opened='true'  mode="side" #sidenav class="sidenav-fab-container" fullscreen >
     <a mat-button color="accent" class="top" [routerLink]="['/home']">Forms</a>
+    <a mat-button color="accent" class="top" [routerLink]="['/employee']">Employee</a>
+    <a mat-button color="accent" class="top" [routerLink]="['/company']">Company</a>
+    <a mat-button color="accent" class="top" [routerLink]="['/practice']">Practice</a>
   </mat-sidenav>
   <mat-sidenav-content> 
     <div class="center-div">
-      <app-home [formData]="data"></app-home>
+      <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>
 </mat-sidenav-container>

@@ -1,4 +1,5 @@
 import { FormData } from './../shared/modelInterface/form-data';
+import { ModelForm } from '../shared/model/model-form';
 import { Component, OnInit, Input } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
 
@@ -8,7 +9,7 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
-  @Input() formData: FormData[];
+  @Input() formData: FormData[] = ModelForm;
   dynamicForm: FormGroup;
   submitted= false;
   formVal=[];

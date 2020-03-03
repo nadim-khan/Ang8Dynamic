@@ -1,0 +1,27 @@
+<mat-card>
+  <mat-card-header>
+    Angular Topics
+  </mat-card-header>
+  <mat-tab-group>
+    <mat-tab label="[ngStyle]">
+      <table class="myTable">
+        <tr>
+          <th>Sr. No.</th>
+          <th>Name</th>
+          <th>Age</th>
+          <th>Country</th>
+        </tr>
+        <tr *ngFor="let user of personData"
+          [ngStyle]="{'color':(user.age<18) ?'yellow': getColor(user.country),'background-color':(user.age<18) ?'red': 'transparent'}">
+          <td>{{user.id}}</td>
+          <td>{{user.name}}</td>
+          <td>{{user.age}}</td>
+          <td>{{user.country}}</td>
+        </tr>
+      </table>
+    </mat-tab>
+    <mat-tab label="[ngClass]">
+
+    </mat-tab>
+  </mat-tab-group>
+</mat-card>

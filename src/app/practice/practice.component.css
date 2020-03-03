@@ -1,0 +1,7 @@
+.myTable{
+    min-width:90%;
+    text-align:center;
+}
+.myTable td{
+    min-width:5%;;
+}

@@ -27,8 +27,22 @@
                     </div>
                   </mat-form-field>
                 </ng-template>
-
-
+                <ng-template [ngSwitchCase]="'email'">
+                  <mat-form-field class="halfWidth">
+                    <mat-label> {{input.Field}}</mat-label>
+                    <input matInput [formControlName]="input.Field" [required]="input.Required"
+                      [minlength]="input.Length" />
+                    <div class="error"
+                      *ngIf="dynamicForm.get(input.Field).invalid && (dynamicForm.get(input.Field).dirty || dynamicForm.get(input.Field).touched)">
+                      <div *ngIf="dynamicForm.get(input.Field).errors.required">
+                        {{input.Field}} required
+                      </div>
+                      <div *ngIf="dynamicForm.get(input.Field).errors.minlength">
+                        Minimum length is {{input.Length}}
+                      </div>
+                    </div>
+                  </mat-form-field>
+                </ng-template>
                 <ng-template [ngSwitchCase]="'textarea'">
                   <mat-form-field class="halfWidth">
                     <mat-label> {{input.Field}}</mat-label>

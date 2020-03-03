@@ -1,4 +1,3 @@
-import { ModelForm } from './shared/model/model-form';
 import { Component } from '@angular/core';
 
 @Component({
@@ -8,5 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'dynamicApp';
-  data= ModelForm;
 }

@@ -17,6 +17,12 @@ export const ModelForm: FormData[] = [
                 Length: 3
             },
             {
+                Field: "Email",
+                Type: "email",
+                Required: true,
+                Length: 3
+            },
+            {
                 Field: "Address",
                 Type: "textarea",
                 Required: true,
