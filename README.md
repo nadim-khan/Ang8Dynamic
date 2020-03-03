@@ -1,27 +1,12 @@
 # DynamicApp
+Description :  Based on the requirement document, The form has been generated through a JSON .
+Application has been develoed using Angular Material.
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.20.
+# Steps to be followed
+Step 1 : Extract the zip file on any location.
+Step 2 : On the app dirctory (~/Ang8Dynamic) : run the command 'npm install' to install the dependencies.
+Step 3 : Run the application using 'npm start' or 'ng serve '.
+Step 4: Open the browser, Application will be working on (dev server) `http://localhost:4200/`.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
