@@ -1,8 +1,14 @@
+.mode{
+    float:right;
+}
+
 mat-toolbar {
   justify-content: space-between;
   background: rgb(22, 103, 179);
 }
-
+.mode{
+    font-size:12px;
+}
 .top {
   min-width: 100%;
 }
@@ -12,7 +18,7 @@ span {
 }
 
 .logo {
-  color: #fff;
+  color: #ff4081;
   float: right;
   cursor: pointer;
   font-size: 30px;
@@ -21,11 +27,12 @@ span {
 }
 
 mat-sidenav-container {
-  min-height: 90.2%;
+  min-height: 90%;
 }
 
 mat-sidenav-content {
   padding: 1% 2% 0 2%;
+  min-height: 88vh;
 }
 
 mat-sidenav {
@@ -52,12 +59,12 @@ mat-sidenav .top {
 }
 
 mat-card {
-  min-height: 85vh;
+  min-height: 82vh;
 }
 
 @media only screen and (max-width: 600px) {
   .logo {
-    color: red;
+    color: #ff4081;
     font-size: 25px;
     float: right;
     margin-right: 0;
@@ -81,14 +88,16 @@ mat-card {
   mat-sidenav {
     opacity: 0.9;
     width: 120px;
-  }
-
-  mat-sidenav,
-  mat-sidenav-content {
     padding: 5px 16px 0 2px;
   }
 
   mat-sidenav-content {
-    width: 60vw;
+    padding: 1% 2% 0 2%;
   }
+}
+
+
+.darkMode{
+    background-color: black;
+    color:white;
 }

@@ -5,3 +5,23 @@
 .myTable td{
     min-width:5%;;
 }
+.practiceParentContainer{
+    max-height:82vh;
+}
+.scrollView{
+    max-height:72vh;
+    overflow-y: auto;
+}
+.NgClass1{
+    color:rgb(156, 109, 6);
+    
+}
+.NgClass2{
+    background-color:rgb(121, 212, 121);
+}
+.NgClass3{
+    font-weight:500;
+}
+.NgClass4{
+    text-align: center;
+}

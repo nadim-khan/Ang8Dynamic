@@ -1,10 +1,10 @@
-<mat-card>
+<mat-card class="practiceParentContainer">
   <mat-card-header>
     Angular Topics
   </mat-card-header>
-  <mat-tab-group>
+  <mat-tab-group >
     <mat-tab label="[ngStyle]">
-      <table class="myTable">
+      <table class="myTable" [ngClass]="'scrollView'">
         <tr>
           <th>Sr. No.</th>
           <th>Name</th>
@@ -20,8 +20,26 @@
         </tr>
       </table>
     </mat-tab>
-    <mat-tab label="[ngClass]">
 
+<!--  ng class example code will be from this point-->
+
+    <mat-tab label="[ngClass]">
+        <div [ngClass]="'scrollView'">
+        <h4>1. Using ngClass as String</h4>
+        <p [ngClass]="'NgClass1'"> Using ngClass as string example - [ngClass]="'NgClass1 NgClass2 NgClass3 NgClass4'"</p>
+        <div [ngClass]="'NgClass1 NgClass2 NgClass3 NgClass4'"*ngFor="let user of personData">
+            {{user.name}}
+        </div>
+        <h4>2. Using ngClass as an Array</h4>
+        <p [ngClass]="['NgClass1','NgClass4']"> Using ngClass as an Array example - [ngClass]="['NgClass1','NgClass4']"</p>
+        <h4 [ngClass]="{'NgClass2':true}">3. Using ngClass as an Object</h4>
+        <mat-slide-toggle [checked]="checked" (change)="toggleCss()">
+        Apply Another css 
+      </mat-slide-toggle>
+        <p [ngClass]="getCss">Using ngClass as string example</p>
+        </div>
     </mat-tab>
+
+
   </mat-tab-group>
 </mat-card>

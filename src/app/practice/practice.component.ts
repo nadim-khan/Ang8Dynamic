@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./practice.component.css']
 })
 export class PracticeComponent implements OnInit {
-
+  checked = false;
+  getCss:any;
   constructor() { }
 
   ngOnInit() {
@@ -30,7 +31,7 @@ export class PracticeComponent implements OnInit {
     {id:16,name:"Aamir Khan",country:"Saudi",age:35},
   ];
 
-  getColor(country,age){
+  getColor(country: any,age: any){
     switch(country){
       case "India" :
       return 'blue';
@@ -43,5 +44,24 @@ export class PracticeComponent implements OnInit {
     }
     
   }
+  toggleCss(){
+    this.checked = !this.checked;
+    if(this.checked === true){
+      this.getCss = {
+        'NgClass1':true,
+        'NgClass2':true,
+        'NgClass3':true,
+        'NgClass4':true
+      }
+    }else{
+      this.getCss = {
+        'NgClass1':false,
+        'NgClass2':false,
+        'NgClass3':false,
+        'NgClass4':false
+      }
+    }
+  }
+  
 
 }
