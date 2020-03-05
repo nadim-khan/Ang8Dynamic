@@ -7,10 +7,12 @@ export class TransformPipe implements PipeTransform {
 
   transform(value: any, tr): any {
     console.log("Value : "+value+ ", Transform to : "+tr);
-    if((typeof value) == 'string'){
+    if((typeof value) === 'string'){
       return 'Hello'+" "+ value.toUpperCase();
-    }else{
+    }else if((typeof value) ==='number'){
       return value = "$"+value/73.34 +" /-";
+    }else if ((typeof value) === null || (typeof value) === undefined) {
+      return "Please enter Your salary";
     }
     
   }
