@@ -1,3 +1,4 @@
+import { TransformPipe } from './pipe/transform.pipe';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,11 +7,27 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./practice.component.css']
 })
 export class PracticeComponent implements OnInit {
+  title="This is property Binding";
+  data1='Binding event and property';
+  data2="Two way binding - [(ngModel)]"
+  cols = 3;
+  border =1;
   checked = false;
+  init =false;
+  getValue:any;
   getCss:any;
+  dateVal=new Date();
+  name;
+  salary;
+  nameChange=false;
+  salaryChange=false;
+
   constructor() { }
 
   ngOnInit() {
+  }
+  buttonEve(){
+    alert('You clicked me!')
   }
   personData:any[] = [
     {id:1,name:"Nadeem Khan",country:"India",age:25},
@@ -31,7 +48,7 @@ export class PracticeComponent implements OnInit {
     {id:16,name:"Aamir Khan",country:"Saudi",age:35},
   ];
 
-  getColor(country: any,age: any){
+  getColor(country: any){
     switch(country){
       case "India" :
       return 'blue';
@@ -62,6 +79,17 @@ export class PracticeComponent implements OnInit {
       }
     }
   }
+
+  formatIt(val){
+    if((typeof val)=== 'string'){
+      this.nameChange=true;
+
+    }else if((typeof val)=== 'number'){
+      this.salaryChange=true;
+
+    }
+  }
+
   
 
 }

@@ -13,6 +13,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { PnfComponent } from './pnf/pnf.component';
 import { PracticeComponent } from './practice/practice.component';
+import { TransformPipe } from './practice/pipe/transform.pipe';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { PracticeComponent } from './practice/practice.component';
     HomeComponent,
     PnfComponent,
     PracticeComponent,
+    TransformPipe,
   ],
   imports: [
     BrowserModule,

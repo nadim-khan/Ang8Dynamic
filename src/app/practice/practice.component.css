@@ -1,16 +1,28 @@
-.myTable{
+.myTable,.FakeTable{
     min-width:90%;
     text-align:center;
 }
-.myTable td{
+.myTable td,.FakeTable td{
     min-width:5%;;
 }
 .practiceParentContainer{
     max-height:82vh;
 }
+.myStyle{
+    font-size:45px;
+    color:red;
+}
+.mat-form-field{
+    padding:10px;
+}
 .scrollView{
     max-height:72vh;
     overflow-y: auto;
+}
+.sections{
+    border:1px solid gray;
+    padding:0.4%;
+    margin:0 2% 0 2%;
 }
 .NgClass1{
     color:rgb(156, 109, 6);
@@ -24,4 +36,14 @@
 }
 .NgClass4{
     text-align: center;
+}
+ul li {
+    font-weight:500;
+    padding:0.5%;
+    list-style-type:none;
+}
+.mat-expansion-panel:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover
+{
+    background: rgba(14, 13, 13, 0.109);
+    color:white;
 }
