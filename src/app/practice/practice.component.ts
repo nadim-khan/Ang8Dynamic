@@ -1,10 +1,12 @@
 import { TransformPipe } from './pipe/transform.pipe';
 import { Component, OnInit } from '@angular/core';
+import { PracticeService } from './service/practice.service';
 
 @Component({
   selector: 'app-practice',
   templateUrl: './practice.component.html',
-  styleUrls: ['./practice.component.css']
+  styleUrls: ['./practice.component.css'],
+  providers:[PracticeService]
 })
 export class PracticeComponent implements OnInit {
   title="This is property Binding";
@@ -16,13 +18,15 @@ export class PracticeComponent implements OnInit {
   init =false;
   getValue:any;
   getCss:any;
-  dateVal=new Date();
+  dateVal;
   name;
   salary;
+  showDate=false;
   nameChange=false;
   salaryChange=false;
 
-  constructor() { }
+  constructor( private pService :PracticeService ) {
+   }
 
   ngOnInit() {
   }
@@ -78,6 +82,10 @@ export class PracticeComponent implements OnInit {
         'NgClass4':false
       }
     }
+  }
+  showDates(){
+    this.showDate=true;
+    this.dateVal=this.pService.getDate();
   }
 
   formatIt(val){

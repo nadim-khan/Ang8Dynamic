@@ -6,7 +6,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TransformPipe implements PipeTransform {
 
   transform(value: any, tr): any {
-    console.log("Value : "+value+ ", Transform to : "+tr);
     if((typeof value) === 'string'){
       return 'Hello'+" "+ value.toUpperCase();
     }else if((typeof value) ==='number'){

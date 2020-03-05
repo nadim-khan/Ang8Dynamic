@@ -45,7 +45,7 @@
     <mat-tab label="Data Binding">
       <div [ngClass]="'scrollView'">
         <mat-accordion>
-          <mat-expansion-panel >
+          <mat-expansion-panel>
             <mat-expansion-panel-header>
               <mat-panel-title>
                 One way binding
@@ -130,9 +130,9 @@
       <div [ngClass]="'scrollView'">
         <h4>Pipes- Custom Pipe</h4>
         <label> Name : </label>
-          <input matInput type="text" placeholder="Name" [(ngModel)]='name'>
+        <input matInput type="text" placeholder="Name" [(ngModel)]='name'>
         <label> Salary : </label>
-          <input matInput type="number" placeholder="Salary" [(ngModel)]='salary'>
+        <input matInput type="number" placeholder="Salary" [(ngModel)]='salary'>
         <table>
           <tr>
             <td *ngIf="name">{{name}}</td>
@@ -151,23 +151,27 @@
         <ul>
           <li>1. Date Pipe
             <div class="sections">
-              <p [ngClass]="['NgClass2']"> Original Date ==> {{dateVal}}</p>
-              <p>shortDate - {{dateVal |date:'shortDate'}}</p>
-              <p>longDate - {{dateVal |date:'longDate'}}</p>
-              <p>fullDate - {{dateVal |date:'fullDate'}}</p>
+              <button mat-raised-button color="accent"(click)="showDates()" *ngIf="!showDate"> Show Formatted Dates <span
+                  class="dashicons dashicons-format-standard"></span></button>
+              <div *ngIf="showDate">
+                <p [ngClass]="['NgClass2']"> Original Date ==> {{dateVal}}</p>
+                <p>shortDate - {{dateVal |date:'shortDate'}}</p>
+                <p>longDate - {{dateVal |date:'longDate'}}</p>
+                <p>fullDate - {{dateVal |date:'fullDate'}}</p>
+              </div>
             </div>
           </li>
-          <li> 2. Percent Pipe
+          <li *ngIf="salary"> 2. Percent Pipe
             <div class="sections">
               Salary from above Input : {{salary|percent:'2.4-8'}}
             </div>
           </li>
-          <li>3. Decimal Pipe
+          <li *ngIf="salary">3. Decimal Pipe
             <div class="sections">
               {{salary|number}}
             </div>
           </li>
-          <li>4. Currency Pipe
+          <li *ngIf="salary">4. Currency Pipe=>
             <div class="sections">
               <p [ngClass]="['NgClass2']"> Default {{salary}} (Default is dollar for currency [pipe])</p>
               <p> Dollar (Default) => {{salary|currency}}</p>
