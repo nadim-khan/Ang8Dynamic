@@ -1,0 +1,11 @@
+.counterParent{
+    background: rgba(212, 248, 205, 0.568);
+    margin:5px;
+    padding:5px;
+    border-radius:5px;
+    border:1px dashed gray;
+    min-height:20px;max-height: 70vh;
+}
+button{
+    margin:5px;
+}

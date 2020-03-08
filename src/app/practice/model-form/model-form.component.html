@@ -1,0 +1,33 @@
+<h4>Model Driven Form <code>FormControl,FormGroup,FormBuilder</code></h4>
+<h6>Reactive Forms</h6>
+<form [formGroup]="modelForm" (submit)="submitmodelForm()">
+  <mat-form-field appearance="outline">
+    <mat-label>Name</mat-label>
+    <input matInput placeholder="Full Name" required formControlName="name">
+    <mat-icon matSuffix>face</mat-icon>
+    <mat-hint>Hint : eg - Nadeem Khan</mat-hint>
+    <mat-error >Please enter Valid Name</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Email</mat-label>
+    <input type="email" matInput placeholder="Email"  email required formControlName="email" >
+    <mat-icon matSuffix>alternate_email</mat-icon>
+    <mat-hint>Hint : eg - khan.nadim58@gmail.com</mat-hint>
+    <mat-error >Please enter Valid Email</mat-error>
+  </mat-form-field>
+  <mat-form-field appearance="outline">
+    <mat-label>Password</mat-label>
+    <input type="password" matInput placeholder="Password" required formControlName="password">
+    <mat-icon matSuffix title="Show Password">remove_red_eye</mat-icon>
+    <mat-hint>Hint : Minimul 8 alphanumeric charecters</mat-hint>
+    <mat-error >Please enter Valid Password</mat-error>
+  </mat-form-field>
+  <div class="submitIt">
+    <button mat-raised-button color="primary" [disabled]="!modelForm.valid" type="submit">
+      <mat-icon matSuffix>border_color</mat-icon>Submit
+    </button>
+    <button mat-raised-button color="warn" type="button">
+      <mat-icon matSuffix>delete_sweep</mat-icon>Cancel
+    </button>
+  </div>
+</form>

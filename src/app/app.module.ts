@@ -14,6 +14,16 @@ import { HomeComponent } from './home/home.component';
 import { PnfComponent } from './pnf/pnf.component';
 import { PracticeComponent } from './practice/practice.component';
 import { TransformPipe } from './practice/pipe/transform.pipe';
+import { TemplateFormComponent } from './practice/template-form/template-form.component';
+import { ModelFormComponent } from './practice/model-form/model-form.component';
+import { CompanyModule } from './company/company.module';
+import { PersonModule } from './person/person.module';
+import { CounterComponent } from './practice/counter/counter.component';
+import { CounterParentComponent } from './practice/counter-parent/counter-parent.component';
+import { ChangeColorDirective } from './practice/change-color.directive';
+import { ParentColorComponent } from './practice/parent-color/parent-color.component';
+import { ThemeComponent } from './practice/theme/theme.component';
+import { HostListnerComponent } from './practice/host-listner/host-listner.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +32,14 @@ import { TransformPipe } from './practice/pipe/transform.pipe';
     PnfComponent,
     PracticeComponent,
     TransformPipe,
+    TemplateFormComponent,
+    ModelFormComponent,
+    CounterComponent,
+    CounterParentComponent,
+    ChangeColorDirective,
+    ParentColorComponent,
+    ThemeComponent,
+    HostListnerComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +48,9 @@ import { TransformPipe } from './practice/pipe/transform.pipe';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    CompanyModule,
+    PersonModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -25,6 +25,7 @@
     "@angular/router": "~8.2.14",
     "@types/jquery": "^3.3.31",
     "@types/moment-range": "^4.0.0",
+    "angular-in-memory-web-api": "^0.5.4",
     "angular-material-fileupload": "0.0.11",
     "angular-moment": "^1.3.0",
     "classlist.js": "^1.1.20150312",

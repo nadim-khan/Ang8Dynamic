@@ -1,0 +1,5 @@
+[
+    {"id":100, "name":"Angular by Nadeem", "catagory":"Programming"},
+            {"id":101, "name":"Java by Shyam", "catagory":"Programming"},
+            {"id":102, "name":"Molecular Biology by Ratre", "catagory":"Biology"}
+]

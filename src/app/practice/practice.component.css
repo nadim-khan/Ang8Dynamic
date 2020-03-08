@@ -23,6 +23,10 @@
     border:1px solid gray;
     padding:0.4%;
     margin:0 2% 0 2%;
+    border-radius:5px;
+}
+.imageHover:hover{
+    transform:scale(5.0);
 }
 .NgClass1{
     color:rgb(156, 109, 6);
@@ -46,4 +50,32 @@ ul li {
 {
     background: rgba(14, 13, 13, 0.109);
     color:white;
+}
+.formsContainer{
+ width: 95%;
+  height: 65vh;
+  margin: 10px;
+  border:1px dashed rgba(221, 219, 219, 0.5);
+}
+.formSideNav{
+    width:20%;
+    padding:5px;
+    border: 1px solid transparent;
+    background: rgba(221, 219, 219, 0.5);
+
+}
+.formSideNav a{
+    width:100%;
+}
+.formSideNav-content{
+    display: flex;
+    height: 100%;
+    justify-content: center;
+}
+.sectionsDashed{
+    background: rgba(235, 162, 162, 0.342);
+    border:1px dashed gray;
+    padding:0.4%;
+    margin:0 2% 0 2%;
+    border-radius:5px;
 }
