@@ -22,3 +22,7 @@ mat-card-content{
 .arrange{
   margin-left:8rem;
 }
+.darkMode{
+  background-color: rgb(43, 41, 41);
+  color:white;
+}

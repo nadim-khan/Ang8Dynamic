@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { GlobalService } from './shared/GlobalServices/global.service';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +11,7 @@ export class AppComponent {
   modeName = 'Dark';
   checked= false;
   getModeCss;
+  constructor(private globalService:GlobalService){}
   toggleMode(){
     this.checked = !this.checked;
     if(this.checked === true){
@@ -23,5 +25,7 @@ export class AppComponent {
         'darkMode':false
       }
     }
+    this.globalService.modeChecked=this.checked;
+    this.globalService.modeName=this.modeName;
   }
 }

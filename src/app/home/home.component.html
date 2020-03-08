@@ -30,7 +30,7 @@
                 <ng-template [ngSwitchCase]="'email'">
                   <mat-form-field class="halfWidth">
                     <mat-label> {{input.Field}}</mat-label>
-                    <input matInput [formControlName]="input.Field" [required]="input.Required"
+                    <input matInput [formControlName]="input.Field" [type]='input.Type' [required]="input.Required"
                       [minlength]="input.Length" />
                     <div class="error"
                       *ngIf="dynamicForm.get(input.Field).invalid && (dynamicForm.get(input.Field).dirty || dynamicForm.get(input.Field).touched)">
@@ -47,7 +47,7 @@
                   <mat-form-field class="halfWidth">
                     <mat-label> {{input.Field}}</mat-label>
                     <textarea matInput [formControlName]="input.Field" [required]="input.Required"
-                      [minlength]="input.Length"></textarea>
+                      [minlength]="input.Length" [maxlength]='input.MaxLength'></textarea>
                     <div class="error"
                       *ngIf="dynamicForm.get(input.Field).invalid && (dynamicForm.get(input.Field).dirty || dynamicForm.get(input.Field).touched)">
                       <div *ngIf="dynamicForm.get(input.Field).errors.required">
@@ -55,6 +55,9 @@
                       </div>
                       <div *ngIf="dynamicForm.get(input.Field).errors.minlength">
                         Minimum length is {{input.Length}}
+                      </div>
+                      <div *ngIf="dynamicForm.get(input.Field).errors.maxlength">
+                        Maximum length is {{input.Length}}
                       </div>
                     </div>
                   </mat-form-field>

@@ -19,10 +19,11 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     const formGroup = {};
+    console.log(this.formData)
     this.formData.forEach(formControl => {
       this.formVal=formControl.Controls;
       this.formVal.forEach(data =>{
-        formGroup[data.Field] = new FormControl( '' ) ;
+        formGroup[data.Field] = new FormControl( '') ;
       })
     });
     this.dynamicForm = new FormGroup(formGroup);

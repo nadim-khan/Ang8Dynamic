@@ -9,8 +9,6 @@ import { PracticeService } from './service/practice.service';
   providers:[PracticeService]
 })
 export class PracticeComponent implements OnInit {
-  
-  hostListnerTitle="Welcome to HostListner Concept";
   title="This is property Binding";
   data1='Binding event and property';
   data2="Two way binding - [(ngModel)]"
@@ -30,8 +28,7 @@ export class PracticeComponent implements OnInit {
   constructor( private pService :PracticeService ) {
     
    }
-   
-
+  
   ngOnInit() {
   }
   buttonEve(){

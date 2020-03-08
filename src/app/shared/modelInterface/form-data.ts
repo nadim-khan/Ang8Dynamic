@@ -6,6 +6,7 @@ export interface FormData {
         Type : string;
         Required : boolean;
         Length? : number;
+        MaxLength? : number;
         Options?: Array<string>;
     }>;
     

@@ -2,21 +2,21 @@
 <form #tempForm="ngForm" (ngSubmit)="submitTempForm(tempForm)">
     <mat-form-field appearance="outline">
       <mat-label>Name</mat-label>
-      <input matInput placeholder="Full Name" name="name" required ngModel>
+      <input matInput name="name" required ngModel>
       <mat-icon matSuffix>face</mat-icon>
       <mat-hint>Hint : eg - Nadeem Khan</mat-hint>
       <mat-error >Please enter Valid Name</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Email</mat-label>
-      <input type="email" matInput placeholder="Email" name="email" email required ngModel #email="ngModel">
+      <input type="email" matInput  name="email" email required ngModel #email="ngModel">
       <mat-icon matSuffix>alternate_email</mat-icon>
       <mat-hint>Hint : eg - khan.nadim58@gmail.com</mat-hint>
       <mat-error >Please enter Valid Email</mat-error>
     </mat-form-field>
     <mat-form-field appearance="outline">
       <mat-label>Password</mat-label>
-      <input type="password" matInput placeholder="Password" name="password" required ngModel>
+      <input type="password" matInput  name="password" required ngModel>
       <mat-icon matSuffix title="Show Password">remove_red_eye</mat-icon>
       <mat-hint>Hint : Minimul 8 alphanumeric charecters</mat-hint>
       <mat-error >Please enter Valid Password</mat-error>

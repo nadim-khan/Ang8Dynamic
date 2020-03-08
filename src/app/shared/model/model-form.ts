@@ -26,7 +26,8 @@ export const ModelForm: FormData[] = [
                 Field: "Address",
                 Type: "textarea",
                 Required: true,
-                Length: 30
+                Length: 30,
+                MaxLength:150
             },
         ]
     },
