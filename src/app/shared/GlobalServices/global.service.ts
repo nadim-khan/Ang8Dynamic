@@ -8,4 +8,5 @@ export class GlobalService {
   modeChecked:boolean;
 
   constructor() { }
+  
 }

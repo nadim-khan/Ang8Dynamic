@@ -2,6 +2,7 @@ import { PracticeService } from './../service/practice.service';
 import { Component, OnInit } from '@angular/core';
 import { bookType } from '../service/bookModel';
 import { Observable } from 'rxjs';
+import { SearchPipe } from '../pipe/search.pipe';
 
 
 @Component({
@@ -16,6 +17,7 @@ export class ObservablesComponent implements OnInit {
   curBookDetails=[];
   curBookAsyncDetails=[];
   bookToBuy;
+  searchText;
   hideIt=false;
   showDetails=false;
   name = 'Angular';
@@ -34,6 +36,12 @@ export class ObservablesComponent implements OnInit {
     });
 
     this.allBooks = this.pService.getBookData(); 
+  }
+  searchIt(text){
+    this.searchText=text;
+    this.getCss= {
+      'halfWidth':false,
+    }
   }
 
   bookDetails(isbn){

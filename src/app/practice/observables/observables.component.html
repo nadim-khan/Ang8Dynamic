@@ -1,21 +1,27 @@
 
 <ul>
   <h3 align="center">Observable Method to get book Data</h3>
+  <mat-form-field appearance="outline" class="searchBar">
+    <mat-label>Serch book</mat-label>
+    <input matInput placeholder="Title, Category, Author ..." [(ngModel)]="searchText">
+    <mat-icon matSuffix>search</mat-icon>
+    <mat-hint>Hint</mat-hint>
+  </mat-form-field>
   <table>
     <tr>
       <td [ngClass]="getCss">
         <div [ngClass]="'bookScrollView'">
-          <li *ngFor="let book of bookData">
+          <li *ngFor="let book of bookData | search:searchText">
             <table>
               <tr>
                 <td [ngStyle]="{'width':'10%','padding':'1%'}">
                   <img [ngStyle]="{'cursor':'zoom-in'}" [src]='book.thumbnailUrl' [alt]="book.title" [height]='90' [width]='80' (click)="bookDetails(book.isbn)">
                 </td>
-                <td (click)="bookDetails(book.isbn)" [ngStyle]="{'max-width':'90%','width':'80%','padding':'2%'}">
-                  <h4 [ngStyle]="{'cursor':'pointer'}" [title]='book.shortDescription' >{{book.title}}</h4>
+                <td [ngStyle]="{'max-width':'90%','width':'80%','padding':'2%'}">
+                  <h4 [ngStyle]="{'cursor':'pointer'}" (click)="bookDetails(book.isbn)" [title]='book.shortDescription' >{{book.title}}</h4>
                   <div class="small_description"><span *ngIf="book.shortDescription">{{book.shortDescription}}</span><span *ngIf="!book.shortDescription">N/A</span></div>
-                  <h6> Catagory : <span [ngStyle]="{'color':'red'}" *ngFor="let category of book.categories">{{category}}, </span> </h6>
-                  <h5 > Author(s) :<span [ngStyle]="{'color':'blue'}" *ngFor="let author of book.authors">{{author}} </span></h5>
+                  <h6> Catagory : <span [ngStyle]="{'color':'red'}" *ngFor="let category of book.categories"><span (click)="searchIt(category)" id="link">{{category}}</span>,</span> </h6>
+                  <h5 > Author(s) :<span [ngStyle]="{'color':'blue'}" *ngFor="let author of book.authors"><span (click)="searchIt(author)" id="link"> {{author}} </span>,</span></h5>
                 <td [ngStyle]="{'min-width':'10%'}">
                   <button mat-raised-button color="accent" (click)="bookDetails(book.isbn)"><mat-icon>open_in_new</mat-icon>Details</button>
                   <button mat-raised-button color="primary" (click)="buyBook(book.isbn)">Buy</button>
@@ -71,7 +77,7 @@
 <p>Observables => Observe our request and response and the subscribe method is used to get those data values</p>
 <p>Observables => Monitor request and response,</p>
 <p>Used with httpClient (http service)</p>
-
+<p>img [src] : <img [height]='250' [width]='750' [src]="'../../assets/images/Observable.JPG'"></p>
 
 <hr>
 
@@ -128,4 +134,4 @@
 </table>
 </div>
 
-<p>img [src] : <img [height]='250' [width]='750' [src]="'../../assets/images/Observable.JPG'"></p>
+

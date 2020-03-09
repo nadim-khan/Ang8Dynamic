@@ -25,6 +25,7 @@ import { ParentColorComponent } from './practice/parent-color/parent-color.compo
 import { ThemeComponent } from './practice/theme/theme.component';
 import { HostListnerComponent } from './practice/host-listner/host-listner.component';
 import { ObservablesComponent } from './practice/observables/observables.component';
+import { SearchPipe } from './practice/pipe/search.pipe';
 
 
 @NgModule({
@@ -43,6 +44,7 @@ import { ObservablesComponent } from './practice/observables/observables.compone
     ThemeComponent,
     HostListnerComponent,
     ObservablesComponent,
+    SearchPipe,
   ],
   imports: [
     BrowserModule,
