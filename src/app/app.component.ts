@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, HostListener } from '@angular/core';
 import { GlobalService } from './shared/GlobalServices/global.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,14 @@ import { GlobalService } from './shared/GlobalServices/global.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'dynamicApp';
+  title = 'Dynamic App';
   modeName = 'Dark';
   checked= false;
   getModeCss;
-  constructor(private globalService:GlobalService){}
+  constructor(private globalService:GlobalService,private router:Router){}
+  visitHome(){
+    this.router.navigateByUrl('');
+  }
   toggleMode(){
     this.checked = !this.checked;
     if(this.checked === true){

@@ -14,6 +14,7 @@ export class ObservablesComponent implements OnInit {
   getCss;
   allBooks:Observable<bookType[]>;
   curBookDetails=[];
+  curBookAsyncDetails=[];
   bookToBuy;
   showDetails=false;
   name = 'Angular';
@@ -50,6 +51,16 @@ export class ObservablesComponent implements OnInit {
   buyBook(isbn){
     this.bookToBuy=this.bookDetails(isbn);
     console.log("Book to Buy : ",this.bookToBuy)
+  }
+
+  bookDetailsAsync(isbn){
+    this.curBookAsyncDetails=[];
+    this.bookData.forEach(curDetails=>{
+      if(curDetails.isbn===isbn){
+        this.curBookAsyncDetails.push(curDetails);
+        console.log("Async Book Detail : ",this.curBookAsyncDetails)
+      }
+    });
   }
 
 }

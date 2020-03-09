@@ -2,7 +2,7 @@
   <div class="navbar" title="Toggle for Side Menu">
     <button mat-icon-button color="accent" (click)="sidenav.toggle()"><mat-icon>reorder</mat-icon></button>
     
-    <span class="logo">Dynamic Form</span>
+    <span class="logo" (click)="visitHome()">{{title}}</span>
   </div>
   <div class="mode">
     <mat-slide-toggle [checked]="checked" (change)="toggleMode()">

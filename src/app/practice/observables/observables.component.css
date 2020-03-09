@@ -23,7 +23,16 @@ mat-simple-snackbar{
 .halfWidth{
     width:50%;
 }
+.small_description span{
+    font-size:12px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical; 
+    line-height: 1.7;
+}
 ::-webkit-scrollbar {
     width: 0; 
     } 
+    
 

@@ -1,11 +1,4 @@
-<p>Stream(Lazy collection ) of values which are received over a period of time</p>
-<p>Observables => Observe our request and response and the subscribe method is used to get those data values</p>
-<p>Observables => Monitor request and response,</p>
-<p>Used with httpClient (http service)</p>
 
-<hr>
-
-<hr>
 <ul>
   <h3 align="center">Observable Method to get book Data</h3>
   <table>
@@ -16,12 +9,13 @@
             <table>
               <tr>
                 <td [ngStyle]="{'width':'10%','padding':'1%'}">
-                  <img [src]='book.thumbnailUrl' [height]='90' [width]='80'>
+                  <img [ngStyle]="{'cursor':'zoom-in'}" [src]='book.thumbnailUrl' [alt]="book.title" [height]='90' [width]='80' (click)="bookDetails(book.isbn)">
                 </td>
                 <td [ngStyle]="{'max-width':'90%','width':'80%','padding':'2%'}">
-                  <h4 [title]='book.shortDescription'>{{book.title}}</h4>
-                  <h6> {{book.shortDescription}} </h6>
-                  <h5 [ngStyle]="{'color':'blue'}"> {{book.authors}} </h5>
+                  <h4 [ngStyle]="{'cursor':'pointer'}" [title]='book.shortDescription' (click)="bookDetails(book.isbn)" >{{book.title}}</h4>
+                  <div class="small_description"><span *ngIf="book.shortDescription">{{book.shortDescription}}</span><span *ngIf="!book.shortDescription">N/A</span></div>
+                  <h6> Catagory : <span [ngStyle]="{'color':'red'}" *ngFor="let category of book.categories">{{category}}, </span> </h6>
+                  <h5 > Author(s) :<span [ngStyle]="{'color':'blue'}" *ngFor="let author of book.authors">{{author}} </span></h5>
                 <td [ngStyle]="{'min-width':'10%'}">
                   <button mat-raised-button color="accent" (click)="bookDetails(book.isbn)">Details</button>
                   <button mat-raised-button color="primary" (click)="buyBook(book.isbn)">Buy</button>
@@ -37,7 +31,7 @@
             <h3 align="center"> Detailed Description</h3>
           <table *ngFor="let details of curBookDetails">
             <tr>
-              <td>
+              <td colspan="2" align="center">
                 <p><img [src]='details.thumbnailUrl' [height]='100' [width]='180'></p>
                 <h4  [title]='details.shortDescription'>{{details.title}}</h4>
               </td>
@@ -68,7 +62,15 @@
 </ul>
 
 
+<hr>
 
+<p>Stream(Lazy collection ) of values which are received over a period of time</p>
+<p>Observables => Observe our request and response and the subscribe method is used to get those data values</p>
+<p>Observables => Monitor request and response,</p>
+<p>Used with httpClient (http service)</p>
+
+
+<hr>
 
 
 
@@ -86,16 +88,41 @@
             <h6> {{book.shortDescription}} </h6>
             <h5 [ngStyle]="{'color':'blue'}"> {{book.authors}} </h5>
           <td [ngStyle]="{'min-width':'10%'}">
-            <button mat-raised-button color="accent">Details</button>
+            <button mat-raised-button color="accent" (click)="bookDetailsAsync(book.isbn)">Details</button>
             <button mat-raised-button color="primary">Buy</button>
           </td>
           <hr>
         </tr>
       </table>
-
     </li>
   </div>
 </ul>
 <hr>
+<div>
+<table *ngFor="let details of curBookAsyncDetails">
+  <tr>
+    <td>
+      <p><img [src]='details.thumbnailUrl' [height]='100' [width]='180'></p>
+      <h4  [title]='details.shortDescription'>{{details.title}}</h4>
+    </td>
+  </tr>
+  <tr>
+    <td>Detailed Description</td>
+    <td>{{details.longDescription}}</td>
+  </tr>
+  <tr>
+    <td>Total Pages</td>
+    <td>{{details.pageCount}}</td>
+  </tr>
+  <tr>
+    <td>Catagories</td>
+    <span [ngStyle]="{'color':'red'}" *ngFor="let category of details.categories">{{category}}, </span>
+  </tr>
+  <tr>
+    <td>Authors</td>
+    <span [ngStyle]="{'color':'blue'}" *ngFor="let author of details.authors">{{author}}, </span>
+  </tr>
+</table>
+</div>
 
 <p>img [src] : <img [height]='250' [width]='750' [src]="'../../assets/images/Observable.JPG'"></p>
