@@ -27,12 +27,12 @@ span {
 }
 
 mat-sidenav-container {
-  min-height: 90%;
+  min-height: 90.3%;
 }
 
 mat-sidenav-content {
   padding: 1% 2% 0 2%;
-  min-height: 88vh;
+  min-height: 88.3vh;
 }
 
 mat-sidenav {

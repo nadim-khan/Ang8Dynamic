@@ -5,7 +5,7 @@
     padding:1%;
     overflow-y:auto;
     border-radius:5px;
-    background: rgba(235, 214, 214, 0.424);
+    background: rgba(214, 222, 235, 0.424);
 }
 .bookDetailedView{
     width:50%;
@@ -22,6 +22,9 @@ mat-simple-snackbar{
 }
 .halfWidth{
     width:50%;
+}
+.bookScrollView tr:hover{
+    background: rgba(205, 215, 226, 0.424);
 }
 .small_description span{
     font-size:12px;

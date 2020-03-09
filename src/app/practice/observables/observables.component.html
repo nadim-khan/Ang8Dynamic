@@ -11,13 +11,13 @@
                 <td [ngStyle]="{'width':'10%','padding':'1%'}">
                   <img [ngStyle]="{'cursor':'zoom-in'}" [src]='book.thumbnailUrl' [alt]="book.title" [height]='90' [width]='80' (click)="bookDetails(book.isbn)">
                 </td>
-                <td [ngStyle]="{'max-width':'90%','width':'80%','padding':'2%'}">
-                  <h4 [ngStyle]="{'cursor':'pointer'}" [title]='book.shortDescription' (click)="bookDetails(book.isbn)" >{{book.title}}</h4>
+                <td (click)="bookDetails(book.isbn)" [ngStyle]="{'max-width':'90%','width':'80%','padding':'2%'}">
+                  <h4 [ngStyle]="{'cursor':'pointer'}" [title]='book.shortDescription' >{{book.title}}</h4>
                   <div class="small_description"><span *ngIf="book.shortDescription">{{book.shortDescription}}</span><span *ngIf="!book.shortDescription">N/A</span></div>
                   <h6> Catagory : <span [ngStyle]="{'color':'red'}" *ngFor="let category of book.categories">{{category}}, </span> </h6>
                   <h5 > Author(s) :<span [ngStyle]="{'color':'blue'}" *ngFor="let author of book.authors">{{author}} </span></h5>
                 <td [ngStyle]="{'min-width':'10%'}">
-                  <button mat-raised-button color="accent" (click)="bookDetails(book.isbn)">Details</button>
+                  <button mat-raised-button color="accent" (click)="bookDetails(book.isbn)"><mat-icon>open_in_new</mat-icon>Details</button>
                   <button mat-raised-button color="primary" (click)="buyBook(book.isbn)">Buy</button>
                 </td>
                 <hr>
@@ -27,7 +27,10 @@
         </div>
       </td>
       <td>
-        <div [ngClass]="'bookScrollView'" *ngIf="curBookDetails.length">
+        <div [ngClass]="'bookScrollView'" *ngIf="curBookDetails.length && !hideIt">
+          <button (click)="closeView()" title="Close Detailed view" [ngStyle]="{'float':'right','color':'red','font-weight':'500'}"mat-icon-button color="primary" aria-label="Example icon-button with a heart icon">
+          Close
+        </button>
             <h3 align="center"> Detailed Description</h3>
           <table *ngFor="let details of curBookDetails">
             <tr>

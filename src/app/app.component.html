@@ -1,8 +1,8 @@
 <mat-toolbar color="primary" [ngClass]="getModeCss">
-  <div class="navbar" title="Toggle for Side Menu">
+  <div class="navbar" title="Home">
     <button mat-icon-button color="accent" (click)="sidenav.toggle()"><mat-icon>reorder</mat-icon></button>
     
-    <span class="logo" (click)="visitHome()">{{title}}</span>
+    <span class="logo" (click)="visitHome()" title="Toggle side menu">{{title}}</span>
   </div>
   <div class="mode">
     <mat-slide-toggle [checked]="checked" (change)="toggleMode()">

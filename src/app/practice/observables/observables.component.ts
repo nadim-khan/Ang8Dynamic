@@ -16,6 +16,7 @@ export class ObservablesComponent implements OnInit {
   curBookDetails=[];
   curBookAsyncDetails=[];
   bookToBuy;
+  hideIt=false;
   showDetails=false;
   name = 'Angular';
 
@@ -36,6 +37,7 @@ export class ObservablesComponent implements OnInit {
   }
 
   bookDetails(isbn){
+    this.hideIt=false;
     this.curBookDetails=[];
     this.getCss= {
       'halfWidth':true,
@@ -61,6 +63,12 @@ export class ObservablesComponent implements OnInit {
         console.log("Async Book Detail : ",this.curBookAsyncDetails)
       }
     });
+  }
+  closeView(){
+    this.hideIt=true;
+    this.getCss= {
+      'halfWidth':false,
+    }
   }
 
 }
