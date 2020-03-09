@@ -1,0 +1,29 @@
+.bookScrollView{
+    height:55vh;
+    width:95%;
+    min-width:50%;
+    padding:1%;
+    overflow-y:auto;
+    border-radius:5px;
+    background: rgba(235, 214, 214, 0.424);
+}
+.bookDetailedView{
+    width:50%;
+    max-width:50%;
+    min-width:50%;
+   
+}
+.widthDescription{
+    max-width:80%;
+    margin-left:12%
+}
+mat-simple-snackbar{
+    width:100%;
+}
+.halfWidth{
+    width:50%;
+}
+::-webkit-scrollbar {
+    width: 0; 
+    } 
+

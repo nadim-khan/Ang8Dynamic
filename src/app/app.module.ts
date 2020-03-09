@@ -24,6 +24,8 @@ import { ChangeColorDirective } from './practice/change-color.directive';
 import { ParentColorComponent } from './practice/parent-color/parent-color.component';
 import { ThemeComponent } from './practice/theme/theme.component';
 import { HostListnerComponent } from './practice/host-listner/host-listner.component';
+import { ObservablesComponent } from './practice/observables/observables.component';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +42,7 @@ import { HostListnerComponent } from './practice/host-listner/host-listner.compo
     ParentColorComponent,
     ThemeComponent,
     HostListnerComponent,
+    ObservablesComponent,
   ],
   imports: [
     BrowserModule,

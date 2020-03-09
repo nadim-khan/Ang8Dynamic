@@ -1,6 +1,9 @@
+import { Observable } from 'rxjs';
 import { TransformPipe } from './pipe/transform.pipe';
 import { Component, OnInit } from '@angular/core';
 import { PracticeService } from './service/practice.service';
+import { bookType } from './service/bookModel';
+
 
 @Component({
   selector: 'app-practice',
@@ -30,6 +33,7 @@ export class PracticeComponent implements OnInit {
    }
   
   ngOnInit() {
+    
   }
   buttonEve(){
     alert('You clicked me!')

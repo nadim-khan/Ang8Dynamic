@@ -203,17 +203,9 @@
     </mat-tab>
 
     <mat-tab label="Observable">
-      <p>Stream(Lazy collection ) of values which are received over a period of time</p>
-      <p>Observables => Observe our request and response and the subscribe method is used to get those data values</p>
-      <p>Observables => Monitor request and response,</p>
-      <p>Used with httpClient (http service)</p>
-      <p>img [src] : <img [height]='250' [width]='750' [src]="'../../assets/images/Observable.JPG'"></p>
-      <ul>
-        <li *ngFor="let book of bookData">
-          {{book.id}}. {{book.name}} [{{book.catagory}}]
-        </li>
-      </ul>
-      <hr>
+      <div [ngClass]="'scrollView'">
+        <app-observables></app-observables>
+    </div>
 
     </mat-tab>
 

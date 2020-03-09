@@ -79,3 +79,14 @@ ul li {
     margin:0 2% 0 2%;
     border-radius:5px;
 }
+.bookScrollView{
+    max-height:45vh;
+    width:95%;
+    padding-left:2%;
+    overflow-y:auto;
+    border:2px solid black;
+    border-radius:5px;
+}
+/* ::-webkit-scrollbar {
+    width: 0; 
+    } */

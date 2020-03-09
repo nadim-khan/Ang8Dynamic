@@ -19,6 +19,6 @@ table {
     background-color: #302b2b;
     color:white;
   }
-  ::-webkit-scrollbar {
+  /* ::-webkit-scrollbar {
     width: 0px; 
-    }
+    } */
