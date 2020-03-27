@@ -1,24 +1,37 @@
 <mat-toolbar color="primary" [ngClass]="getModeCss">
   <div class="navbar" title="Home">
-    <button mat-icon-button color="accent" (click)="sidenav.toggle()"><mat-icon>reorder</mat-icon></button>
-    
+    <button mat-icon-button color="accent" (click)="sidenav.toggle()">
+      <mat-icon>reorder</mat-icon>
+    </button>
+
     <span class="logo" (click)="visitHome()" title="Toggle side menu">{{title}}</span>
   </div>
   <div class="mode">
-    <mat-slide-toggle [checked]="checked" (change)="toggleMode()">
-       Theme {{modeName}} 
+    <mat-slide-toggle [checked]="checked" (change)="toggleMode()">Theme {{modeName}}
     </mat-slide-toggle>
+    <button mat-button [matMenuTriggerFor]="profileMenu" *ngIf="authService.authenticated"><mat-icon>account_circle</mat-icon></button>
+    <mat-menu #profileMenu="matMenu">
+      <mat-list-item class="profileData">{{authService.user.displayName}}</mat-list-item>
+      <mat-list-item class="profileData">{{authService.user.email}}</mat-list-item>
+      <mat-divider></mat-divider>
+      <a mat-button color="accent" [routerLink]="['/home']" (click)="signup()"><mat-icon>playlist_add</mat-icon>Signup</a>
+      <a mat-button color="accent" [routerLink]="['/home']" (click)="signout()"><mat-icon>not_interested</mat-icon>Signout</a>
+    </mat-menu>
+    <a mat-button *ngIf="!authService.authenticated" color="accent" [routerLink]="['/login']" (click)="login()" ><mat-icon>perm_identity</mat-icon>Login</a>
   </div>
 </mat-toolbar>
 <mat-sidenav-container color="primary" >
-  <mat-sidenav opened='true'  mode="side" #sidenav class="sidenav-fab-container" fullscreen  [ngClass]="getModeCss">
-    <a mat-button color="accent" class="top" [routerLink]="['/home']">Forms</a>
-    <a mat-button color="accent" class="top" [routerLink]="['/person']">Person</a>
-    <a mat-button color="accent" class="top" [routerLink]="['/company']">Company</a>
-    <a mat-button color="accent" class="top" [routerLink]="['/practice']">Practice / Concept</a>
+  <mat-sidenav opened='sidebar' mode="side" #sidenav class="sidenav-fab-container"  fullscreen [ngClass]="getModeCss">
+    <a mat-button color="accent" class="top" [routerLink]="['/admin']" routerLinkActive="activeLink">Admin</a>
+    <a mat-button color="accent" class="top" [routerLink]="['/home']" routerLinkActive="activeLink">Forms</a>
+    <a mat-button color="accent" class="top" [routerLink]="['/person']" routerLinkActive="activeLink">Person</a>
+    <a mat-button color="accent" class="top" [routerLink]="['/company']" routerLinkActive="activeLink">Company</a>
+    <a mat-button color="accent" class="top" [routerLink]="['/practice']" routerLinkActive="activeLink">Practice / Concept</a>
   </mat-sidenav>
-  <mat-sidenav-content [ngClass]="getModeCss" > 
+  <mat-sidenav-content [ngClass]="getModeCss">
     <div class="center-div">
+      {{authService.user.displayName}}<p>{{authService.user.email}}</p>
+      <app-alerts></app-alerts>
       <router-outlet></router-outlet>
     </div>
   </mat-sidenav-content>

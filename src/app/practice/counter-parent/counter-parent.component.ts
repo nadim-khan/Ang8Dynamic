@@ -7,13 +7,14 @@ import { CounterComponent } from '../counter/counter.component';
   styleUrls: ['./counter-parent.component.css']
 })
 export class CounterParentComponent implements OnInit {
-  @ViewChild(CounterComponent,{static: false}) counterCOmponent:CounterComponent;
+  // tslint:disable-next-line: typedef-whitespace
+  @ViewChild(CounterComponent, {static: false}) counterCOmponent: CounterComponent;
 
   constructor() { }
-  increase(){
+  increase() {
     this.counterCOmponent.increaseByOne();
   }
-  decrease(){
+  decrease() {
     this.counterCOmponent.decreaseByOne();
   }
 

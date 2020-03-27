@@ -11,7 +11,7 @@ export class TemplateFormComponent implements OnInit {
 
   ngOnInit() {
   }
-  submitTempForm(formData){
+  submitTempForm(formData) {
     console.log(formData.value);
   }
 

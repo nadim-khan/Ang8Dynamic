@@ -26,8 +26,23 @@ import { ThemeComponent } from './practice/theme/theme.component';
 import { HostListnerComponent } from './practice/host-listner/host-listner.component';
 import { ObservablesComponent } from './practice/observables/observables.component';
 import { SearchPipe } from './practice/pipe/search.pipe';
+import { AdminComponent } from './admin/admin.component';
+import { ActivateGuard } from './activate.guard';
+import { LoginComponent } from './login/login.component';
+import { LifecycleComponent } from './practice/lifecycle/lifecycle.component';
+import { LifecycleChildComponent } from './practice/lifecycle-child/lifecycle-child.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import { faUserCircle } from '@fortawesome/free-regular-svg-icons';
+import { MsalModule } from '@azure/msal-angular';
+import { OAuthSettings } from 'src/oauth';
+import { AlertsComponent } from './alerts/alerts.component';
 
-
+// Add FontAwesome icons
+library.add(faExternalLinkAlt);
+library.add(faUserCircle);
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +60,11 @@ import { SearchPipe } from './practice/pipe/search.pipe';
     HostListnerComponent,
     ObservablesComponent,
     SearchPipe,
+    AdminComponent,
+    LoginComponent,
+    LifecycleComponent,
+    LifecycleChildComponent,
+    AlertsComponent,
   ],
   imports: [
     BrowserModule,
@@ -54,10 +74,16 @@ import { SearchPipe } from './practice/pipe/search.pipe';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
+    NgbModule,
     CompanyModule,
     PersonModule,
+    FontAwesomeModule,
+    MsalModule.forRoot({
+      clientID: OAuthSettings.appId
+    })
+
   ],
-  providers: [],
+  providers: [ActivateGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

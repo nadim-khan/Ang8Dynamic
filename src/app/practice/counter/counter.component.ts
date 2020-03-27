@@ -7,19 +7,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CounterComponent implements OnInit {
   message;
-  count:number=0;
+  count = 0;
 
-  constructor() { 
-    
+  constructor() {
+
   }
 
-  increaseByOne(){
-    this.count=this.count+1;
-    this.message='Counter : '+this.count;
+  increaseByOne() {
+    this.count = this.count + 1;
+    this.message = 'Counter : ' + this.count;
   }
-  decreaseByOne(){
-    this.count=this.count-1;
-    this.message='Counter : '+this.count;
+  decreaseByOne() {
+    this.count = this.count - 1;
+    this.message = 'Counter : ' + this.count;
   }
 
   ngOnInit() {

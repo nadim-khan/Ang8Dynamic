@@ -23,6 +23,6 @@ mat-card-content{
   margin-left:8rem;
 }
 .darkMode{
-  background-color: rgb(43, 41, 41);
+  background-color: #000;
   color:white;
 }

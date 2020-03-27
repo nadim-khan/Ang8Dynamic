@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ChangeColorDirective }  from '../change-color.directive';
+import { ChangeColorDirective } from '../change-color.directive';
 
 @Component({
   selector: 'app-parent-color',
@@ -7,13 +7,13 @@ import { ChangeColorDirective }  from '../change-color.directive';
   styleUrls: ['./parent-color.component.css']
 })
 export class ParentColorComponent implements OnInit {
-  @ViewChild(ChangeColorDirective,{static: false}) changeColorDirective:ChangeColorDirective;
+  @ViewChild(ChangeColorDirective, {static: false}) changeColorDirective: ChangeColorDirective;
 
   constructor() { }
 
   ngOnInit() {
   }
-  changeColor(color:string){
+  changeColor(color: string) {
     this.changeColorDirective.change(color);
   }
 

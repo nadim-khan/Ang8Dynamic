@@ -98,6 +98,15 @@ mat-card {
 
 
 .darkMode{
-    background-color: black;
+    background-color: #000;
     color:white;
+}
+.activeLink{
+  border:1px solid white;
+  border-radius:5px;
+ background-color: #3f51b5;
+}
+.profileData{
+  text-align:center;
+  font-size:15px;
 }

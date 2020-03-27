@@ -3,6 +3,11 @@
     Angular Topics
   </mat-card-header>
   <mat-tab-group>
+    <mat-tab label="Lifecycle">
+      <div [ngClass]="'scrollView'">
+        <app-lifecycle></app-lifecycle>
+      </div>
+    </mat-tab>
     <mat-tab label="[ngStyle]">
       <table class="myTable" [ngClass]="'scrollView'">
         <tr>

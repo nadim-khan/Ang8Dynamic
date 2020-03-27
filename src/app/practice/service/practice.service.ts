@@ -9,12 +9,12 @@ import { bookType } from './bookModel';
 export class PracticeService {
   bookUrl = '../../assets/data/bookdata.json';
   bookData;
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getDate(){
+  getDate() {
     return new Date();
   }
-  getBookData():Observable<bookType[]>{
+  getBookData(): Observable<bookType[]> {
     return this.http.get<bookType[]>(this.bookUrl);
   }
 }

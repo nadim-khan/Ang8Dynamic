@@ -1,4 +1,4 @@
-import { Component, OnInit, HostListener ,ElementRef, Renderer} from '@angular/core';
+import { Component, OnInit, HostListener , ElementRef, Renderer} from '@angular/core';
 
 @Component({
   selector: 'app-host-listner',
@@ -7,28 +7,26 @@ import { Component, OnInit, HostListener ,ElementRef, Renderer} from '@angular/c
 })
 export class HostListnerComponent implements OnInit {
 
+  // tslint:disable-next-line: deprecation
+  constructor(private elemetRef: ElementRef, private renderer: Renderer) { }
+  hostListnerTitle = 'Welcome to HostListner Concept';
+
   @HostListener('click') onclick() {
-    alert("HostListner Clicked");
+    alert('HostListner Clicked');
   }
-  @HostListener('mouseenter') onmouseover(){
+  @HostListener('mouseenter') onmouseover() {
     this.changebgColor('red');
-    console.log("HostListner Mouseover");
+    console.log('HostListner Mouseover');
   }
-  @HostListener('mouseleave') onmouseleave(){
+  @HostListener('mouseleave') onmouseleave() {
     this.changebgColor('black');
-    console.log("HostListner Mouseover");
+    console.log('HostListner Mouseover');
   }
 
-  constructor(private elemetRef:ElementRef, private renderer:Renderer) { }
 
-
-  changebgColor(color:string){
-    this.renderer.setElementStyle(this.elemetRef.nativeElement,'color',color)
+  changebgColor(color: string) {
+    this.renderer.setElementStyle(this.elemetRef.nativeElement, 'color', color );
   }
-  hostListnerTitle = "Welcome to HostListner Concept";
-
-  
-
   ngOnInit() {
   }
 

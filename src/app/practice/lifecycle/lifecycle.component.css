@@ -1,0 +1,10 @@
+.parent{
+    background-color: rgba(255, 99, 71, 0.507);
+    margin :10px;
+    padding:10px;
+    border:1px dashed black;
+}
+code{
+    font-size:15px;
+    color:red;
+}

@@ -8,25 +8,25 @@ import { FormGroup , FormBuilder, Validators} from '@angular/forms';
 })
 export class ModelFormComponent implements OnInit {
 
-  constructor(private fb:FormBuilder) { }
+  constructor(private fb: FormBuilder) { }
   modelForm = this.fb.group({
-    name:['',Validators.required],
-    email:['',Validators.required],
-    password:['',Validators.minLength(6)]
-  })
+    name: ['', Validators.required],
+    email: ['', Validators.required],
+    password: ['', Validators.minLength(6)]
+  });
 
   ngOnInit() {
-    this.modelForm.statusChanges.subscribe(data2=>{
+    this.modelForm.statusChanges.subscribe(data2 => {
      // console.log("statuschange() :",data2)
-    })
+    });
     this.modelForm.valueChanges
-    .subscribe(data=>{
+    .subscribe(data => {
      // console.log("valuechange() :",data)
-    })
+    });
   }
 
-  submitmodelForm(){
-    console.log("ModelForm : ",this.modelForm.value);
+  submitmodelForm() {
+    console.log('ModelForm : ', this.modelForm.value);
   }
 
 }

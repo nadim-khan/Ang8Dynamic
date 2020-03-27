@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PersonComponent implements OnInit {
 
-  constructor() { 
-    console.log("person module loaded");
+  constructor() {
+    console.log('person module loaded');
   }
 
   ngOnInit() {

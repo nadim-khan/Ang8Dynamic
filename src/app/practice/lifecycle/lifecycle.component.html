@@ -1,0 +1,50 @@
+<h3>Lifecycle of component includes :</h3>
+<ul>
+    <li *ngFor="let step of steps;"> {{step.desc}}</li>
+</ul>
+<h4>Lifecycle of component devided into two :</h4>
+<ul>
+    <h5>1. For Parent components (Parent lifecycle executes before child )</h5>
+    <li><code>ngOnChanges</code>
+        <p>Called Whenever Input (Data bound) value changed (@Input)</p>
+    </li>
+    <li><code>ngOnInit</code>
+        <p>Called only once when component gets loaded.</p>
+        <p>Use to initialize data in component</p>
+        <p>Called after input values are set when a component initialized</p>
+        <p>Added by default to every component by default by angular CLI</p>
+        <p>Called after ngOnChanges()</p>
+    </li>
+    <li>
+        <code>ngDoCheck</code>
+        <p>Whenever something changes on the template of component or inside the component</p>
+        <p>Called during every change detection (update/detect/change in Properties etc..) run</p>
+        <p>Called after ngOninit()</p>
+    </li>
+</ul>
+<ul>
+    <h5>2. For Parent components</h5>
+    <li>ngOnContentInit</li>
+    <li>ngOnContentChecked</li>
+    <li>ngOnViewInit</li>
+    <li>ngOnViewChecked</li>
+    <li>ngOnDestroy</li>
+</ul>
+
+<mat-divider></mat-divider>
+<div class="parent">
+    <h3>
+        Parent Of Lifecycle
+    </h3>
+    @Input is used fro Parent to child data communication
+
+    <p>Value of child is : {{cData}}</p>
+
+    <mat-form-field class="login-card">
+        <mat-label> ParentInput</mat-label>
+        <input matInput #pcomponent (keyup)="0" required />
+    </mat-form-field>
+    <app-lifecycle-child [parentData]="pcomponent.value" [arrList]="myArr" (childEvent)="textBind($event)"></app-lifecycle-child>
+    <button (click)="addValue()">add</button>
+    <span><code>*Open console to check lifecycle.</code></span>
+</div>
